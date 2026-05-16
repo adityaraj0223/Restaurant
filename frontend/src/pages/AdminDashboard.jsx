@@ -36,7 +36,7 @@ const AdminDashboard = () => {
     // Fetch orders from DB on mount
     const fetchOrders = async () => {
       try {
-        const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+        const API_URL = import.meta.env.VITE_API_URL || 'https://restaurant-mdtm.onrender.com';
         const res = await fetch(`${API_URL}/api/orders`);
         const data = await res.json();
         if(data.success && data.orders) {
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
 
     // Update DB
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+      const API_URL = import.meta.env.VITE_API_URL || 'https://restaurant-mdtm.onrender.com';
       await fetch(`${API_URL}/api/orders/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -101,7 +101,7 @@ const AdminDashboard = () => {
 
     // Delete from DB
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+      const API_URL = import.meta.env.VITE_API_URL || 'https://restaurant-mdtm.onrender.com';
       await fetch(`${API_URL}/api/orders/${id}`, { method: 'DELETE' });
     } catch(e) { console.error(e); }
   };
