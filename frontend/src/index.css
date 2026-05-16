@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff4757;
+  --color-primary-dark: #ff3344;
+  --color-dark-bg: #0a0a0a;
+  --color-dark-surface: #111111;
+  --color-dark-surface-2: #1a1a1a;
+  --color-neon-orange: #ff7e5f;
+  --color-neon-purple: #aa3bff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-dark-bg);
+  color: #ffffff;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.6), rgba(15, 15, 15, 0.8));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a; 
+}
+::-webkit-scrollbar-thumb {
+  background: #333333; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary); 
+}
+
+/* Hide scrollbar for horizontal lists */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 7s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-ai {
+  background: linear-gradient(to right, #aa3bff, #ff4757);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
